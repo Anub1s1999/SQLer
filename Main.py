@@ -4,8 +4,8 @@ from mysql import connector
 import mysql.connector
 from mysql.connector import connect, Error
 import os
-import urllib2
-import mysql.connector as mysql
+import requests
+from time import sleep
 from mysql.connector.errors import DataError
 
 class Auth:
