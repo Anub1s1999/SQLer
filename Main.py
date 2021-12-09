@@ -160,6 +160,13 @@ def Self(hos,usr,passwd,db):
         main()
 
 def main():
+    url = "http://www.google.com"
+    timeout = 5
+    try:
+	    request = requests.get(url, timeout=timeout)
+	    print("Connected to the Internet")
+    except (requests.ConnectionError, requests.Timeout) as exception:
+	    print("No internet connection.")
     c=Auth()
     c.Authf()
     if c.hos=='' or c.passwd=='' or c.usr=='' or c.dab=='':
