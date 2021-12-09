@@ -51,7 +51,7 @@ def Connecting1(hos,usr,passwd,db):
             database=db
         ) as connection:
             print(connection,"\r\n")
-            select_count="SELECT * FROM referrals"
+            select_count="SELECT * FROM $table$" #enter the table here
             with connection.cursor() as cursor:
                 cursor.execute(select_count)
                 result = cursor.fetchall()
@@ -99,7 +99,7 @@ def Connecting2(hos,usr,passwd,db):
             database=db
         ) as connection:
             print(connection,"\r\n")
-            select_count="SELECT * FROM referrals WHERE referrer_id=37"
+            select_count="SELECT * FROM $table$ WHERE <argument>"
             with connection.cursor() as cursor:
                 cursor.execute(select_count)
                 result = cursor.fetchall()
